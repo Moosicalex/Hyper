@@ -1,7 +1,9 @@
 #include <chrono>
-#include <SDL2/SDL.h>
+#include <SDL2\SDL.h>
+#include <iostream>
 
 using namespace std::chrono_literals;
+using namespace std;
 
 // we use a fixed timestep of 1 / (60 fps) = 16 milliseconds
 constexpr std::chrono::nanoseconds timestep(16ms);
@@ -32,7 +34,8 @@ game_state interpolate(game_state const & current, game_state const & previous, 
   return interpolated_state;
 }
 
-int main() {
+int WinMain() {
+  cout <<"IT's working!" << endl;
   using clock = std::chrono::high_resolution_clock;
 
   std::chrono::nanoseconds lag(0ns);
@@ -63,4 +66,6 @@ int main() {
 
     render(interpolated_state);
   }
+  //should never get here
+  return 1;
 }

@@ -4,17 +4,11 @@
             "type": "cppbuild",
             "label": "C/C++: g++.exe build active file",
             "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
-            "LibDirs": [
-                "C:\\C++Libraries\\SDL2",
-            ],
-            "Libs": [
-                "SDL2",
-            ],
             "args": [
                 "-L",
-                "${LibDirs}",
-                "-l",
-                "${Libs}",
+                "lib",
+                "-lSDL2",
+                "-Iinclude/SDL-release-2.30.6/include",
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",

@@ -1,9 +1,20 @@
-LIBDIRS = \
-	C:\C++Libraries\SDL2
+INCLUDE_DIR = -Iinclude
 
-LIBS = -lSDL2
+LIB_DIR = lib
+
+LDFLAGS = -L $(LIB_DIR)
+
+LDLIBS = -lSDL2 
+
+MAKE_FLAGS = $(INCLUDE_DIR) $(LDFLAGS) $(LDLIBS)
 
 
-FILES = Hyper.cpp
 
-g++ -L $(LIBDIRS) $(LIBS) -o $(FILES) Hyper.exe
+output: Hyper.o
+	g++ $(MAKE_FLAGS) Hyper.o -o Hyper.exe
+
+Hyper.o: Hyper.cpp Hyper.h
+	g++ $(MAKE_FLAGS) -c Hyper.cpp
+
+clean: 
+	rm *.o output
