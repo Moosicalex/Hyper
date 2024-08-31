@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "include/SDL-release-2.30.6/include"
+                "include"
             ],
             "defines": [
                 "_DEBUG",
